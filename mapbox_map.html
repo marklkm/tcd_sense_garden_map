@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Map with Hover Geocode & Detailed Content using Mapbox</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
+</head>
+
+<div id="map"></div>
+
+<script>
+    // Initialize Mapbox
+    mapboxgl.accessToken = 'pk.eyJ1IjoibWFya2xrbSIsImEiOiJjbGxnaGp2bHcwanViM2Rxanc2N2NtdXF0In0.158ufJhYwXYKjoj-zPrZIQ';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-6.25954,53.31214],
+        zoom: 18
+    });
+
+    map.on('load', function() {
+        // Sample data with text, photos, and audio information
+        var data = [
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-6.25955,53.31214]
+                },
+                "properties": {
+                    "description": [
+                        "This is the first paragraph for Point 1.",
+                        "More details about Point 1.",
+                        "Additional information for Point 1."
+                    ],
+                    "photo": "bees.jpg",
+                    "audio": "path_to_audio1.mp3"
+                }
+            },
+            {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-6.25951,53.31214]
+                },
+                "properties": {
+                    "description": [
+                        "This is the first paragraph for Point 2.",
+                        "More details about Point 2.",
+                        "Additional information for Point 2."
+                    ],
+                    "photo": "lavender.jpg",
+                    "audio": "path_to_audio2.mp3"
+                }
+            }
+        ];
+
+        data.forEach(function(marker) {
+            var el = document.createElement('div');
+            el.className = 'marker';
+            el.style.backgroundImage = 'url(leaf-green.png)';
+            el.style.width = '32px';
+            el.style.height = '32px';
+
+            new mapboxgl.Marker(el)
+                .setLngLat(marker.geometry.coordinates)
+                .setPopup(new mapboxgl.Popup({ offset: 25 })
+                    .setHTML(`<h4>Detailed Description</h4>
+                              ${marker.properties.description.map(desc => `<p>${desc}</p>`).join('')}
+                              <img src='${marker.properties.photo}' width='280px'>
+                              <br>
+                              <audio controls>
+                                  <source src='${marker.properties.audio}' type='audio/mpeg'>
+                              </audio>`))
+                .addTo(map);
+
+            el.addEventListener('mouseenter', function() {
+                var coordinates = marker.geometry.coordinates;
+                new mapboxgl.Popup()
+                    .setLngLat(coordinates)
+                    .setText(`Lat: ${coordinates[1].toFixed(4)}, Lng: ${coordinates[0].toFixed(4)}`)
+                    .addTo(map);
+            });
+
+            el.addEventListener('mouseleave', function() {
+                map.getCanvas().style.cursor = '';
+                map.getCanvasContainer().removeChild(el);
+            });
+        });
+    });
+
+</script>
+
+
+<body>

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Map with Hover Geocode & Detailed Content</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        .custom-popup .leaflet-popup-content {
+            width: auto !important;  /* Adjust width as needed */
+        }
+    </style>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navbar with Logo -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="trinity_botanic_logo.jpg" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+                Trinity College Botanic Garden Sensory Trail
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sensorytrail">Sensory Trail</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#stops">Sensory Stops</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#map_page">Sensory Trail Map</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pages Container -->
+    <div class="container mt-4 mb-4">
+
+        <!-- About Page -->
+        <section id="about">
+            <h1>Trinity College Botanic Garden</h1>
+            <p>Trinity College Botanic Garden, located in Dartry, Dublin, D06W226 is a teaching and research facility for the Trinity 
+                College Botany Department. It is home to a living collection of approximately 4,000 species, 
+                and also houses the Irish Threatened Plant Seed Bank.  The majority of the gardens 
+                are outside with the only indoor areas being inside the glasshouses so wear something 
+                warm or bring a jacket on colder days.  Please note that most of our surfaces are a
+                 mixture of gravel and grass and may be more difficult to traverse for visitors with 
+                 limited mobility. We are currently working to make the gardens and glasshouses easily accessible to everyone.</p>
+        </section>
+
+    
+
+    <!-- Sensory Trail Page -->
+    <section id="sensorytrail" class="mt-4">
+        <h1>Sensory Trail</h1>
+             <p>The Trinity College Botanic Garden Sensory Trail was the idea of Heather McLean. Her internship was sponsored by Trinity Disability Service in a new and exciting collaboration between Trinity Botanic Garden and Disability Services to create a special sensory map of the gardens as part of the TCD Sense project. Heather has just completed her Botany degree at Trinity.
+
+             </p>
+
+             <h2>General Information for the main TCD Sense Map</h2>
+             <h3>Description</h3>
+             <p>Trinity College Botanic Garden, located in Dartry, Dublin, D06W226 is a teaching and research facility for the Trinity College Botany Department. It is home to a living collection of approximately 4,000 species, and also houses the Irish Threatened Plant Seed Bank.  The majority of the gardens are outside with the only indoor areas being inside the glasshouses so wear something warm or bring a jacket on colder days.  Please note that most of our surfaces are a mixture of gravel and grass and may be more difficult to traverse for visitors with limited mobility. We are currently working to make the gardens and glasshouses easily accessible to everyone.
+
+             </p>
+             <h3>Physical Access</h3>
+             <p>The gardens are available to visit all year round, except during the Christmas holiday period - opening hours are listed below.  Occasionally members of the public are invited in for events, such as Culture Night, and details of these can be found at https://trinitybotanicgarden.ie/calendar-of-events/.  
+
+                Getting to the gardens is easy with a leap card, the 140 bus is every ten minutes from outside Trinity towards Rathmines.  Stay on the bus until the very last stop and the gardens are a three minute walk away. Alternatively, you can take the green line Luas to Cowper and the gardens are a ten minute walk from there (map to the right).
+                
+                Catering facilities are not available at this location so bring your own food and drink.  Please take all rubbish away with you.
+                
+                The The Walled Garden and the glass houses are open Monday to Friday, 9am to 4pm.  The West and South Arboretums are available 24/7 (access is via Trinity Halls entrance only); however, please note that any planned activities there must be notified in advance to Dr Steve Waldren, Curator, swaldren@tcd.ie.</p>
+                <h3>Sensory Information</h3>
+                <p>
+                    Sensory Classification:  Quiet Space.  The Botanic Garden is a quiet and peaceful space for the college community to enjoy the nature and an incredible collection of plants.  During term time some areas may be slightly busy when they are being used for teaching, but the majority of the time they are quiet and peaceful.  Visitors are welcome to walk the grounds, explore the glasshouses, or rest, read and relax with nature.  
+
+Detailed sensory information is included in the sensory trail of the gardens.
+                </p>
+                <h3>Charging Points</h3>
+                <p>
+                    Not available. 
+                </p>
+                <h3>Seating Areas</h3>
+                <p>
+                    Five outdoor benches seating 20 people in total. Two tree stump seats in walled garden. One tree stump seat inside each of the main glasshouses.
+                </p>
+    </section>
+
+
+        <!-- Sensory Stops Page -->
+        <section id="stops" class="mt-4">
+            <h1>Sensory Stops</h1>
+            <p>Click on the images to get a full description of the Sensory Stops.</p>
+            <div class="row">
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 1 - Lavender</h5>
+                    <img src="lavender.jpg" alt="Image 1" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image1Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image1Modal" tabindex="-1" aria-labelledby="image1ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image1ModalLabel">Sensory Stop 1 - Lavender</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>As you walk through the front gate, on your left you will find a small rockery and a large patch of lavender.  Lavender smells the strongest when it is flowering in spring and summer. Are there any flowers on the lavender plant when you visit? Research has found that the smell of lavender can have calming effects on humans and other animals and has also been found to reduce anxiety and decrease stress. How are you feeling today? Do you feel any different after smelling lavender for a moment or two? 
+                                        If you like the smell, break a small sprig off the lavender and carry it round with you while you explore the gardens.</p>
+                                    <img src="lavender.jpg" alt="Image 1" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 2 - Bees</h5>
+                    <img src="bees.jpg" alt="Image 2" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image2Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image2Modal" tabindex="-1" aria-labelledby="image2ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image2ModalLabel">Sensory Stop 2 - Bees</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Located in a small hut in the Walled Garden (behind the hammock), you can peep in the windows and watch honey bees crawling in and out their hive and listen to the faint buzzing. These are one of the main pollinators for the gardens and the reason the trees in the Gardens are so full of fruit every autumn. Note how you feel when you watch bees. Some people find watching beehives calming and hypnotic, others feel uncomfortable and nervous. How does watching and listening to the bees affect you? 
+                                        If you enjoy watching the bees and you are visiting in summer months, look for the tall plant with pale yellow flowers (meadow rue) by the entrance to the south arboretum. and you should find it teeming with white-tailed bumble bees. Take a moment to watch the bees flit from flower to flower and listen to their gentle buzzing.</p>
+                                    <img src="bees.jpg" alt="Image 2" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 3 - Ancient Plants</h5>
+                    <img src="ancient_plants.jpg" alt="Image 3" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image3Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image3Modal" tabindex="-1" aria-labelledby="image3ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image3ModalLabel">Sensory Stop 3 - Ancient Plants</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Cycad house is filled with living fossils and some of these plants evolved more than 250 million years ago. How do you feel standing amongst plants that were a popular food with vegetarian dinosaurs? What does it smell like in the house? Cycads reproduce via cones which are either male or female, and male cones which contain the pollen use different scents to attract and repel pollinators. What does the house smell like to you on your visit? Carefully (they can be sharp) touch some of the leaves. Mature leaves are tough, smooth and often very sharp to deter herbivores. Look around and see if you can spot any cycads growing new leaves. What do they feel like? New leaves on cycads are feel much softer / velvety. This house can be visited all year but the greenhouse is heated in winter to protect these tropical trees from the cold, making it the perfect place to visit if the winter blues have you feeling down. You can visit the heated greenhouse, listen to the rain on the roof, smell the trees, touch the plants and enjoy some outside time in the warm.</p>
+                                    <img src="ancient_plants.jpg" alt="Image 3" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                              
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 4 - Local &amp; Exotic Plants</h5>
+                    <img src="lavender.jpg" alt="Image 4" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image4Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image4Modal" tabindex="-1" aria-labelledby="image4ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image1ModalLabel">Sensory Stop 4 - Local &amp; Exotic Plants</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>The Gardens contain approximately 4,000 plant species from every corner of the world, meaning that you do not need to travel further than the Gardens to meet some unusual plants you would rarely see in Dublin. Stove house, the long greenhouse and the cycad house contain tropical plants that thrive in the heat. Sensory information of exotic plants can invoke many feelings. If you are feeling homesick, you can search for familiar plants from your home country and enjoy looking at them, touching them or smelling them. If you are stressed from writing or marking essays you can wander around the exotic plants and reminisce about past holidays or plan your next. Missing your home in the countryside? Go and visit the Irish greenhouse. 
+                                        Which plants from which region are your favourite? How do they make you feel? If you could travel anywhere in the world, where would you go?</p>
+                                    <img src="lavender.jpg" alt="Image 4" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 5 - Aloe Vera</h5>
+                    <img src="lavender.jpg" alt="Image 5" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image5Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image5Modal" tabindex="-1" aria-labelledby="image5ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image5ModalLabel">Sensory Stop 5 - Aloe Vera</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>In the Long House greenhouse you will find the collection of Aloe plants. One of these plants, the Aloe vera, has been designated to let visitors take a section of leaf from and explore the tactile sensory aspects of this plant. Do not take a leaf from the wrong aloe vera plant – if unsure always ask one of the staff! How does the liquid inside the leaf smell? Some describe it as a savoury smell, similar to garlic or an onion. Do you like the smell? Many people are aware that the sap inside this plant can soothe sunburn, but it’s also a very effective moisturiser for dry skin and a historical treatment for acne. Some people enjoy rubbing Aloe on their hands as a sensory stimulant for touch and smell. Please note: If you decide to use this as a moisturiser / spot treatment you do so at your own risk, allergic reactions are possible and if you get aloe vera in your eye it can be very painful! So approach this sensory station with caution and take care of yourself.</p>
+                                    <img src="lavender.jpg" alt="Image 5" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 6 - Teas &amp; Trees</h5>
+                    <img src="lavender.jpg" alt="Image 6" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image6Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image6Modal" tabindex="-1" aria-labelledby="image6ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image6ModalLabel">Sensory Stop 6 - Teas &amp; Trees</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Herbal teas have many different flavours and tastes but they also have many other properties such as boosting the immune system, aiding digestion and hydration. Many of the plants and trees in the gardens have historically been used to brew different herbal teas. Mulberry tea for example has properties which reduce inflammation, regulate blood sugar and improve heart health. Tea made from pine needles is high in vitamins C and A which aid your immune system, eyesight and skin and hair regeneration. Gingko tea is high in antioxidants and some research shows that tea made from Gingko trees reduces symptoms of psychiatric disorders and dementia. Gingko tea may also improve brain function and reduce anxiety and / or depression.
+                                        If you are feeling curious, there are plenty of simple recipes online for you to research how to brew tea from these plants.  You are welcome to harvest a few leaves to try making your own tea at home.</p>
+                                    <img src="lavender.jpg" alt="Image 6" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 7 - Fiddleheads on Ferns</h5>
+                    <img src="lavender.jpg" alt="Image 7" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image7Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image7Modal" tabindex="-1" aria-labelledby="image7ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image7ModalLabel">Sensory Stop 7 - Fiddleheads on Ferns</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>In the Stove House and Long House glass houses you can sometimes see fiddleheads growing on the ferns. These are very young fronds that haven’t unfurled yet and they look completely different to the rest of the plant. What do they remind you of?  How do they feel to touch?</p>
+                                    <img src="lavender.jpg" alt="Image 1" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 8 - Catnip</h5>
+                    <img src="lavender.jpg" alt="Image 8" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image8Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image8Modal" tabindex="-1" aria-labelledby="image8ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image8ModalLabel">Sensory Stop 8 - Catnip</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Catnip is not just for cats. While it won’t have the same psychological effects on humans as it does on cats, it has a unique minty smell and pretty purple flowers in summer. Catnip and Lavender belong to the same family but they smell different. Do you like the smell? Rub some leaves between your fingers - can you tell the difference between lavender and catnip by smell alone?</p>
+                                    <img src="lavender.jpg" alt="Image 1" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 9 - Wintersweeet</h5>
+                    <img src="lavender.jpg" alt="Image 9" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image9Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image9Modal" tabindex="-1" aria-labelledby="image9ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image1ModalLabel">Sensory Stop 9 - Wintersweet</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Chimonanthus praecox (wintersweet) flowers in January and February. Look out for the pretty yellow flowers blooming on the tree near the Irish House in the middle of winter. The flowers smell quite strongly, so you are likely to smell it before you see it! What do they smell like to you?</p>
+                                    <img src="lavender.jpg" alt="Image 1" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 10 - Witch Hazel</h5>
+                    <img src="lavender.jpg" alt="Image 10" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image10Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image10Modal" tabindex="-1" aria-labelledby="image10ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image10ModalLabel">Sensory Stop 10 - Witch Hazel</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Throughout history witch hazel has been used as a treatment for many skin conditions such as stretch marks and acne, due to its exceptional anti-inflammatory properties.  Break off a leaf and sniff it.  Some describe it as fresh and lemon scented.  Witch hazel concoctions are available to purchase commercially, however if you are unable to afford it, you can research online how to forage and prepare acne treatments from witch hazel you have foraged yourself.</p>
+                                    <img src="lavender.jpg" alt="Image 1" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 11 - Frost on Grass</h5>
+                    <img src="lavender.jpg" alt="Image 11" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image11Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image11Modal" tabindex="-1" aria-labelledby="image11ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image1ModalLabel">Sensory Stop 11 - Frost on Grass</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Crunch sound as you walk on grass, looks 'clean' and pretty.</p>
+                                    <img src="lavender.jpg" alt="Image 1" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 12 - Summer Storms</h5>
+                    <img src="lavender.jpg" alt="Image 12" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image12Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image12Modal" tabindex="-1" aria-labelledby="image12ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image12ModalLabel">Sensory Stop 12 - Summer Storms</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>These greenhouses are coolest in the summer, making them an ideal space to spend time in during rainy days in the summer. One plant in the Irish House, Equisetum hyemale (horsetail), is a living fossil which evolved tens of millions of years ago. Equisetum has tiny leaves that are joined at the colourful stripes on the stem. Take a moment and look at how differently shaped this plant is to many others at the gardens. Most plants have curves created by the stem and leaf shapes, this plant is linear and vertical. What do the contrasting colours remind you of? Stroke the stem. Does it feel rough or smooth? Does this plant remind you of any other plants at the Gardens? You will find tree stump seats in the Long House where you can sit and wait for the storm to pass while you smell the rain and listen to the sound on the roof.</p>
+                                    <img src="lavender.jpg" alt="Image 12" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 13 - Tree Canopy</h5>
+                    <img src="lavender.jpg" alt="Image 13" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image13Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image13Modal" tabindex="-1" aria-labelledby="image13ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image1Modal3Label">Sensory Stop 13 - Tree Canopy</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>The north arboretum is full of trees and is a cool shady spot, ideal for hiding from the sun on a hot summer day. If it is warm and dry try lying on the grass under the Black Walnut tree and looking up at the canopy, watching the leaves move in the wind across this sky. This activity can be a very grounding exercise, so if you feel like your head is spinning, your thoughts are racing or you are struggling to concentrate then it is worth trying this. When you are lying on the grass pay careful attention to the sensory information around you. What does the ground feel like on your back? Can you hear the birds or the leaves rustling in the breeze? What colour is the sky today? Can you smell the wild garlic?</p>
+                                    <img src="lavender.jpg" alt="Image 1" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 14 - Wild Garlic</h5>
+                    <img src="lavender.jpg" alt="Image 14" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image14Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image14Modal" tabindex="-1" aria-labelledby="image14ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image14ModalLabel">Sensory Stop 14 - Wild Garlic</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>In spring and early summer you will find wild garlic growing in the South Arboretum. Search for it in the spring under the trees near the bluebells. What does the smell remind you of? Garlic contains Allicin, a sulphur compound, and some find the smell relaxing and, whilst not proven, an old remedy for insomnia is to put a garlic clove under your pillow as the smell is said to relax people. Why not sit down on the bench in the corner of the arboretum while you decide if you like the smell from the wild garlic or not? 
+                                        When picked at the right time, the entire plant is edible including the leaves, stalks, bulbs and flowers. Past visitors to the gardens have harvested this and used it in a variety of recipes including pesto, lasagne, and as a herb in many other recipes. As well as being a sensory stimulant, eating garlic has other benefits for physical health as it boosts the immune system and can help reduce high blood pressure and high cholesterol. If you catch the common cold, eating garlic is thought to hasten the recovery time.
+                                        Visitors are allowed to collect wild garlic if they wish, but please note if you decide to consume it you do so at your own risk and it is your responsibility to ensure that you are not allergic and that it is washed and prepared correctly.</p>
+                                    <img src="lavender.jpg" alt="Image 14" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 15 - Fruit Trees</h5>
+                    <img src="lavender.jpg" alt="Image 15" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image15Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image15Modal" tabindex="-1" aria-labelledby="image15ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image15ModalLabel">Sensory Stop 15 - Fruit Trees</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Dotted around the lawn are fruit trees including a pear tree and two apple trees, one which produces exceptional eating apples, and the other exceptional cooking apples. In the spring these trees are filled with fragrant blossom, in the summer you can see baby apples beginning to grow and in the autumn the trees are full of fruit. We encourage you to visit these trees and engage with the visual and scented stimuli they provide across the seasons. No one will stop you harvesting fruit from these trees, stewed apples and poached pears are a delicious way to incorporate vitamin C and healthy fibre into your diet. Foraging local apples and pears has many benefits, both for individuals and the environment, but any food gathered is consumed at your own risk. Wash everything thoroughly before eating and do not consume anything unless you are 100% sure the fruit is edible. TCD is not liable for any adverse effects from eating fruit grown at the Gardens.</p>
+                                    <img src="lavender.jpg" alt="Image 15" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 16 - Summer Storms</h5>
+                    <img src="lavender.jpg" alt="Image 16" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image16Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image16Modal" tabindex="-1" aria-labelledby="image16ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image1ModalLabel">Sensory Stop 16 - Summer Storms</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>These greenhouses are coolest in the summer, making them an ideal space to spend time in during rainy days in the summer. One plant in the Irish House, Equisetum hyemale (horsetail), is a living fossil which evolved tens of millions of years ago. Equisetum has tiny leaves that are joined at the colourful stripes on the stem. Take a moment and look at how differently shaped this plant is to many others at the gardens. Most plants have curves created by the stem and leaf shapes, this plant is linear and vertical. What do the contrasting colours remind you of? Stroke the stem. Does it feel rough or smooth? Does this plant remind you of any other plants at the Gardens? You will find tree stump seats in the Long House where you can sit and wait for the storm to pass while you smell the rain and listen to the sound on the roof.</p>
+                                    <img src="lavender.jpg" alt="Image 16" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 17 - Baby's Tears</h5>
+                    <img src="lavender.jpg" alt="Image 17" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image17Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image17Modal" tabindex="-1" aria-labelledby="image17ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image17ModalLabel">Sensory Stop 17 - Baby's Tears</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p>In the east of the gardens, near Liz’s bench, you will find instead of grass covering the ground here there is another plant, commonly known as Baby’s tears. Soleirolia soleirolii is in the nettle family but it won’t sting you, it is actually very soft to touch and cushiony to sit on. Can you see any flowers? This flowers between May and August but the flowers are so tiny you might not be able to see them. 
+                                        If it’s a nice day, take your shoes off and walk around the Baby’s Tears barefoot. Many people find walking outside with bare feet is a very grounding experience and soothes anxiety. Part of this is because when you are walking barefoot outside you watch carefully where you step meaning your eyes are absorbing a lot of green light waves. Green environments are soothing and research shows they can induce a reduction in the human heartrate which has a calming influence on the body. In addition to this, there are pressure points under your feet that connect with the eye nervous system, and pressure on these points can ease eyestrain. So sensory information received by walking around barefoot outside might actually improve another of your senses – eyesight.</p>
+                                    <img src="lavender.jpg" alt="Image 17" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <h5>Sensory Stop 18 - Snowdrops</h5>
+                    <img src="lavender.jpg" alt="Image 18" class="img-fluid" data-bs-toggle="modal" data-bs-target="#image18Modal">
+                    <!-- Image Modal -->
+                    <div class="modal fade" id="image18Modal" tabindex="-1" aria-labelledby="image18ModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="image18ModalLabel">Sensory Stop 18 - Snowdrops</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="lavender.jpg" alt="Image 18" class="img-fluid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+            <!-- Map PAge -->
+    <section id="map_page" class="mt-4">
+        <h1>Sensory Trail Map</h1>
+        <p>This map shows the Sensory Trail Stops for Trinity College Botanic Garden.</p>
+        <div id="map" style="width: 100%; height: 1200px;"></div>
+    </section>
+
+
+        </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-light text-center text-secondary py-3">
+        <div class="container">
+            <p>&copy; 2023 Trinity College Botanic Garden - Sensory Trail</p>
+        </div>
+    </footer>
+
+<script>
+    // Initialize the map
+    var map = L.map('map').setView([53.31214, -6.25954], 20);
+
+    // Add a tile layer (OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    // Function to create detailed popups with paragraphs
+    function createPopup(descriptionArray, photo, audio) {
+        var descriptionHTML = descriptionArray.map(desc => `<p>${desc}</p>`).join('');
+        return `
+            <div style="max-width: 300px;">
+                <h4>Trinity College Botanic Garden Sensory Trail</h4>
+                ${descriptionHTML}
+                <img src='${photo}' width='280px' style="margin-top: 10px;"><br>
+                <audio controls style="width: 100%; margin-top: 10px;">
+                    <source src='${audio}' type='audio/mpeg'>
+                </audio>
+            </div>`;
+    }
+
+    function onMarkerHover(e) {
+        var latLng = e.target.getLatLng();
+        var tooltipContent = `Lat: ${latLng.lat.toFixed(4)}, Lng: ${latLng.lng.toFixed(4)}`;
+        e.target.bindTooltip(tooltipContent).openTooltip();
+    }
+
+    var descriptions1 = [
+    "Sensory Stop 1 - Lavender",
+        "As you walk through the front gate, on your left you will find a small rockery and a large patch of lavender",
+        "Lavender smells the strongest when it is flowering in spring and summer."
+    ];
+
+    var marker1 = L.marker([53.31214, -6.25954])
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions1, 'lavender.jpg', 'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3'), {className: 'custom-popup'})
+                    .on('mouseover', onMarkerHover)
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });
+
+    var descriptions2 = [
+    "Sensory Stop 2 - Bees",
+        "Located in a small hut in the Walled Garden (behind the hammock), you can peep in the windows and watch honey bees crawling in and out their hive and listen to the faint buzzing.",
+        "These are one of the main pollinators for the gardens and the reason the trees in the Gardens are so full of fruit every autumn."
+    ];
+
+    var marker2 = L.marker([53.31214, -6.26])
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions2, 'bees.jpg', 'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3'), {className: 'custom-popup'})
+                    .on('mouseover', onMarkerHover)
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });
+
+</script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

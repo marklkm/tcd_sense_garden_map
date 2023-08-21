@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Map with Detailed Content in Paragraphs</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        .custom-popup .leaflet-popup-content {
+            width: auto !important;  /* Adjust width as needed */
+        }
+    </style>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+
+<div id="map" style="width: 100%; height: 1200px;"></div>
+
+<script>
+    // Initialize the map
+    var map = L.map('map').setView([53.31214, -6.25954], 22);
+
+    // Add a tile layer (OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+    // Function to create detailed popups with paragraphs
+    function createPopup(descriptionArray, photo, audio) {
+        var descriptionHTML = descriptionArray.map(desc => `<p>${desc}</p>`).join('');
+        return `
+            <div style="max-width: 300px;">
+                <h4>Trinity College Botanic Garden Sensory Trail</h4>
+                ${descriptionHTML}
+                <img src='${photo}' width='280px' style="margin-top: 10px;"><br>
+                <audio controls style="width: 100%; margin-top: 10px;">
+                    <source src='${audio}' type='audio/mpeg'>
+                </audio>
+            </div>`;
+    }
+
+    function onMarkerHover(e) {
+        var latLng = e.target.getLatLng();
+        var tooltipContent = `Lat: ${latLng.lat.toFixed(4)}, Lng: ${latLng.lng.toFixed(4)}`;
+        e.target.bindTooltip(tooltipContent).openTooltip();
+    }
+
+    var descriptions1 = [
+    "Sensory Stop 1 - Lavender",
+        "As you walk through the front gate, on your left you will find a small rockery and a large patch of lavender",
+        "Lavender smells the strongest when it is flowering in spring and summer."
+    ];
+
+    var marker1 = L.marker([53.31214, -6.25954])
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions1, 'https://trinitybotanicgarden.ie/wp-content/uploads/2019/12/living-collections-long-house-feature.jpg', 'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3'), {className: 'custom-popup'})
+                    .on('mouseover', onMarkerHover)
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });
+
+    var descriptions2 = [
+    "Sensory Stop 2 - Bees",
+        "Located in a small hut in the Walled Garden (behind the hammock), you can peep in the windows and watch honey bees crawling in and out their hive and listen to the faint buzzing.",
+        "These are one of the main pollinators for the gardens and the reason the trees in the Gardens are so full of fruit every autumn."
+    ];
+
+    var marker2 = L.marker([53.31214, -6.25968])
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions2, 'https://trinitybotanicgarden.ie/wp-content/uploads/2019/12/living-collections-long-house-feature.jpg', 'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3'), {className: 'custom-popup'})
+                    .on('mouseover', onMarkerHover)
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });
+
+    
+    var descriptions3 = [
+    "Sensory Stop 3 - Ancient Plants",
+        "Cycad house is filled with living fossils and some of these plants evolved more than 250 million years ago.",
+        "How do you feel standing amongst plants that were a popular food with vegetarian dinosaurs?"
+    ];
+
+    var marker3 = L.marker([53.31201, -6.25981])
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions3, 'https://trinitybotanicgarden.ie/wp-content/uploads/2019/12/living-collections-long-house-feature.jpg', 'https://www.learningcontainer.com/wp-content/uploads/2020/02/Kalimba.mp3'), {className: 'custom-popup'})
+                    .on('mouseover', onMarkerHover)
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });
+
+</script>
+
+
+<body>
