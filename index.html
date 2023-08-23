@@ -68,7 +68,7 @@
 
         <!-- About Page -->
         <section id="about">
-            <h1>Trinity College Botanic Garden - Sensory Trail</h1>
+            <h1>Trinity College Botanic Garden</h1>
 
             <img src="images/sensory_tree_trail.png" class="img-fluid mt-4 mb-4" alt="Entrance to Trinity College Botanic Garden">
 
@@ -87,7 +87,7 @@
 
     <!-- Sensory Trail Page -->
     <section id="sensorytrail" class="mt-4">
-        <h1>Sensory Trail</h1>
+        <h1>Trinity College Botanic Garden - Sensory Trail</h1>
         
              <p>The Trinity College Botanic Garden Sensory Trail was the idea of Heather McLean. Her internship was sponsored by the <a href="https://www.tcd.ie/disability/" target="_blank" rel="nonopener">Trinity Disability Service </a>in a new and exciting collaboration between Trinity Botanic Garden and Trinity Disability Service to create a special sensory map of the gardens as part of the <a href="https://www.tcd.ie/disability/services/tcdsense.php" target="_blank" rel="nonopener"> TCD Sense - The Trinity Sensory Processing Project</a>. Heather has just completed her Botany degree at Trinity.
 
@@ -645,7 +645,9 @@ var busIcon = L.icon({
 });
 
     var descriptions1 = [
-    "<b>Sensory Stop 1: Lavender - The Rockery</b>",
+    "<h5>Sensory Stop 1: Lavender - The Rockery</h5>",
+    "<hr class='hr'/>",
+    "<h5>Description</h5>",
         "As you walk through the front gate, on your left you will find a small rockery and a large patch of lavender. Lavender smells the strongest when it is flowering in spring and summer.",
     ];
 
@@ -656,7 +658,9 @@ var busIcon = L.icon({
                     .on('mouseout', function(e) { e.target.closeTooltip(); });
 
     var descriptions2 = [
-    "<b>Sensory Stop 2: Bees - The Walled Garden</b>",
+    "<h5>Sensory Stop 2: Bees - The Walled Garden</h5>",
+    "<hr class='hr'/>",
+    "<h5>Description</h5>",
         "Located in a small hut in the Walled Garden (behind the hammock), you can peep in the windows and watch honey bees crawling in and out their hive and listen to the faint buzzing. These are one of the main pollinators for the gardens and the reason the trees in the Gardens are so full of fruit every autumn.",
     ];
 
@@ -665,7 +669,8 @@ var busIcon = L.icon({
                     .bindPopup(createPopup(descriptions2, 'images/bees.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
                     .on('mouseover', onMarkerHover)
                     .on('mouseout', function(e) { e.target.closeTooltip(); });
-
+               
+    /*
     var descriptions3 = [
     "<b>Trinity College Botanic Garden - Main Office</b>",
         
@@ -673,16 +678,19 @@ var busIcon = L.icon({
 
     var marker3 = L.marker([53.312479, -6.259912], {icon: flowerIcon})
                     .addTo(map)
-                    .bindPopup(createPopup(descriptions3, 'images/garden_office.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                    .bindPopup(createPopup(descriptions3, 'images/garden-office.jpeg', 'lost_and_found.mp3'), {className: 'custom-popup'})
                     .on('mouseover', onMarkerHover)
                     .on('mouseout', function(e) { e.target.closeTooltip(); });
 
+      */    
                     
     var descriptions4 = [
-    "<b>Trinity College Botanic Garden</b>",
+    "<h5>Trinity College Botanic Garden</h5>",
+    "<hr class='hr'/>",
     "Palmerston Park, Dartry, Dublin 6, D06 W226, Ireland.",
         
     ];
+
 
     var marker4 = L.marker([53.312682, -6.260056], {icon: gardenIcon})
                     .addTo(map)
@@ -692,7 +700,7 @@ var busIcon = L.icon({
 
        
     var descriptions5 = [
-    "<b>140 Bus Stop </b>"
+    "<h5>140 Bus Stop </h5>"
         
     ];
 
