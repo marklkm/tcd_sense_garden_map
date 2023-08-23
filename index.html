@@ -554,6 +554,18 @@ Detailed sensory information is included in the sensory trail of the gardens.
                     .on('mouseover', onMarkerHover)
                     .on('mouseout', function(e) { e.target.closeTooltip(); });
 
+    var descriptions3 = [
+    "Cowper Luas Stop - Green Line",
+        "The Cowper Luas Stop (Green Line) is a ten minute walk from the Trinity College Botanic Garden.",
+        
+    ];
+
+    var marker3 = L.marker([53.3163983, -6.254399])
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions3, 'images/cowper_luas.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                    .on('mouseover', onMarkerHover)
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });
+
 </script>
 
     <!-- Bootstrap JS -->
