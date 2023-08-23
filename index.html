@@ -629,11 +629,19 @@
 });
 
 var gardenIcon = L.icon({
-    iconUrl: 'images/trinity_botanic_logo.jpg',
+    iconUrl: 'images/garden_marker.png',
     shadowUrl: '',
     
 
-    iconSize:     [50, 50], // size of the icon
+    iconSize:     [80, 80], // size of the icon
+});
+
+var busIcon = L.icon({
+    iconUrl: 'images/garden_bustop.png',
+    shadowUrl: '',
+    
+
+    iconSize:     [80, 80], // size of the icon
 });
 
     var descriptions1 = [
@@ -673,17 +681,26 @@ var gardenIcon = L.icon({
     var descriptions4 = [
     "<b>Trinity College Botanic Garden</b>",
     "Palmerston Park, Dartry, Dublin 6, D06 W226, Ireland.",
-        "Phone: +353 (01) 497 2070",
-        "Email: botanicgarden@tcd.ie"
         
     ];
 
     var marker4 = L.marker([53.312682, -6.260056], {icon: gardenIcon})
                     .addTo(map)
-                    .bindPopup(createPopup(descriptions4, 'images/trinity_botanic_logo.jpg', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                    .bindPopup(createPopup(descriptions4, 'images/garden_marker.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
                     .on('mouseover', onMarkerHover)
                     .on('mouseout', function(e) { e.target.closeTooltip(); });
 
+       
+    var descriptions5 = [
+    "<b>140 Bus Stop </b>"
+        
+    ];
+
+    var marker5 = L.marker([53.3124912,-6.2614806], {icon: busIcon})
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions5, 'images/garden_bustop.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                    .on('mouseover', onMarkerHover)
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });
                     
                     
 </script>
