@@ -743,7 +743,7 @@ var gardenIcon = L.icon({
     shadowUrl: '',
     
 
-    iconSize:     [80, 80], // size of the icon
+    iconSize:     [70, 70], // size of the icon
 });
 
 var busIcon = L.icon({
@@ -762,10 +762,18 @@ var luasIcon = L.icon({
     iconSize:     [100, 100], // size of the icon
 });
 
+var greenhouseIcon = L.icon({
+    iconUrl: 'images/greenhouse.png',
+    shadowUrl: '',
+    
+
+    iconSize:     [30, 30], // size of the icon
+});
+
     var descriptions1 = [
-    "<h5>Sensory Stop 1: Lavender - The Rockery</h5>",
+    "<h6>Sensory Stop 1: Lavender - The Rockery</h6>",
     "<hr class='hr'/>",
-    "<h5>Description</h5>",
+    "<h6>Description</h6>",
         "As you walk through the front gate, on your left you will find a small rockery and a large patch of lavender. Lavender smells the strongest when it is flowering in spring and summer.",
     ];
 
@@ -776,9 +784,9 @@ var luasIcon = L.icon({
                     .on('mouseout', function(e) { e.target.closeTooltip(); });
 
     var descriptions2 = [
-    "<h5>Sensory Stop 2: Bees - The Walled Garden</h5>",
+    "<h6>Sensory Stop 2: Bees - The Walled Garden</h6>",
     "<hr class='hr'/>",
-    "<h5>Description</h5>",
+    "<h6>Description</h6>",
         "Located in a small hut in the Walled Garden (behind the hammock), you can peep in the windows and watch honey bees crawling in and out their hive and listen to the faint buzzing. These are one of the main pollinators for the gardens and the reason the trees in the Gardens are so full of fruit every autumn.",
     ];
 
@@ -803,7 +811,7 @@ var luasIcon = L.icon({
       */    
                     
     var descriptions4 = [
-    "<h5>Trinity College Botanic Garden</h5>",
+    "<h5>Trinity College Botanic Garden Office</h5>",
     "<hr class='hr'/>",
     "Palmerston Park, Dartry, Dublin 6, D06 W226, Ireland.",
         
@@ -840,6 +848,66 @@ var descriptions6 = [
                     .on('mouseover', onMarkerHover)
                     .on('mouseout', function(e) { e.target.closeTooltip(); });
 
+
+
+var descriptions7 = [
+    "<h5>The Cycad House</h5>"
+        
+    ];
+
+    var marker7 = L.marker([53.312340, -6.260012], {icon: greenhouseIcon})
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions7, 'images/garden_marker.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                    .on('mouseover', onMarkerHover)
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });
+
+
+var descriptions8 = [
+    "<h5>The Potting Shed (Off limits)</h5>"
+        
+    ];
+
+    var marker8 = L.marker([53.312330, -6.259832], {icon: greenhouseIcon})
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions8, 'images/garden_marker.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                    .on('mouseover', onMarkerHover)
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });
+
+
+    var descriptions9 = [
+    "<h5>The Long House</h5>"
+        
+    ];
+
+    var marker9 = L.marker([53.312441, -6.260396], {icon: greenhouseIcon})
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions9, 'images/garden_marker.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                    .on('mouseover', onMarkerHover)
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });      
+                    
+      
+    var descriptions10 = [
+    "<h5>The Irish House</h5>"
+        
+    ];
+
+    var marker10 = L.marker([53.312188, -6.259969], {icon: greenhouseIcon})
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions10, 'images/garden_marker.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                    .on('mouseover', onMarkerHover)
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });   
+                    
+                    
+    var descriptions11 = [
+    "<h5>The Stove House</h5>"
+        
+    ];
+
+    var marker11 = L.marker([53.312252, -6.259999], {icon: greenhouseIcon})
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions11, 'images/garden_marker.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                    .on('mouseover', onMarkerHover)
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });                 
 
 	
 </script>
