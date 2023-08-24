@@ -645,6 +645,14 @@ var busIcon = L.icon({
     iconSize:     [80, 80], // size of the icon
 });
 
+var luasIcon = L.icon({
+    iconUrl: 'images/cowper_stop.png',
+    shadowUrl: '',
+    
+
+    iconSize:     [90, 90], // size of the icon
+});
+
     var descriptions1 = [
     "<h5>Sensory Stop 1: Lavender - The Rockery</h5>",
     "<hr class='hr'/>",
@@ -711,7 +719,20 @@ var busIcon = L.icon({
                     .on('mouseover', onMarkerHover)
                     .on('mouseout', function(e) { e.target.closeTooltip(); });
                     
-                    
+
+var descriptions6 = [
+    "<h5>Cowper Luas Stop - Green Line</h5>"
+        
+    ];
+
+    var marker6 = L.marker([53.313047, -6.258705], {icon: luasIcon})
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions6, 'images/cowper_luas_stop.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                    .on('mouseover', onMarkerHover)
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });
+
+
+	
 </script>
 
 <!-- Mapbox script -->
