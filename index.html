@@ -735,7 +735,12 @@
     var map = L.map('map').setView([53.31214, -6.25954], 19);
 
     // Add a tile layer (OpenStreetMap)
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+    // L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+	L.tileLayer('https://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=fa39f1df414d4dc1ab5bf1323d4b6d09', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, Tiles &copy; <a href="https://www.thunderforest.com/">Thunderforest</a>',
+        maxZoom: 19
+    }).addTo(map);
 
     // Function to create detailed popups with paragraphs
     function createPopup(descriptionArray, photo, audio) {
