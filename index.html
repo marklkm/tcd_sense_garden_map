@@ -991,6 +991,15 @@ var trinityhallIcon = L.icon({
     iconSize:     [200, 200], // size of the icon
 });
 
+
+var trinitycollegeIcon = L.icon({
+    iconUrl: 'images/trinity_college.png',
+    shadowUrl: '',
+    
+
+    iconSize:     [200, 200], // size of the icon
+});
+
     var descriptions1 = [
     "<h6>Sensory Stop 1: Lavender</h6>",
     "<hr class='hr'/>",
@@ -1396,7 +1405,19 @@ var descriptions8 = [
                     .addTo(map)
                     .bindPopup(createPopup(descriptions33, 'images/alpine_house.jpeg', 'lost_and_found.mp3'), {className: 'custom-popup'})
                    
-                    .on('mouseout', function(e) { e.target.closeTooltip(); });              
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });  
+
+
+    var descriptions34 = [
+    "<h5>Trinity College Dublin</h5>"
+        
+    ];
+
+    var marker34 = L.marker([53.312651, -6.259313], {icon: trinitycollegeIcon})
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions34, 'images/trinity_college.jpg', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                   
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });   
 
 	
 </script>
