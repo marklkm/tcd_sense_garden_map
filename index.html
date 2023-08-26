@@ -1009,6 +1009,16 @@ var trinitycollegeIcon = L.icon({
     iconSize:     [200, 200], // size of the icon
 });
 
+
+var rockeryIcon = L.icon({
+    iconUrl: 'images/rockery.png',
+    shadowUrl: '',
+    
+
+    iconSize:     [80, 80], // size of the icon
+});
+
+
     var descriptions1 = [
     "<h6>Sensory Stop 1: Lavender</h6>",
     "<hr class='hr'/>",
@@ -1436,6 +1446,17 @@ var descriptions8 = [
     var marker35 = L.marker([53.311817096, -6.259578554], {icon: logseatIcon})
                     .addTo(map)
                     .bindPopup(createPopup(descriptions35, 'images/log_seat.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                   
+                    .on('mouseout', function(e) { e.target.closeTooltip(); }); 
+
+    var descriptions36 = [
+    "<h5>The Rockery</h5>"
+        
+    ];
+
+    var marker36 = L.marker([53.312453289, -6.259594647], {icon: rockeryIcon})
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions36, 'images/the_rockery.jpeg', 'lost_and_found.mp3'), {className: 'custom-popup'})
                    
                     .on('mouseout', function(e) { e.target.closeTooltip(); }); 
 		
