@@ -695,9 +695,8 @@
             <!-- Map Page -->
     <section id="map_page" class="mt-4">
         <h1>Sensory Trail Map</h1>
-        <p>This map shows the Sensory Trail Stops for Trinity College Botanic Garden.</p>
-        
-	    <p>Click on the circular map icons to get a description of the Sensory Stops, as well as an audio description.</p>
+        <p>This map shows the Sensory Trail Stops for Trinity College Botanic Garden.
+        Click on the flower markers to get a description of the Sensory Stops, as well as an audio description.</p>
         <div id="map" style="width: 100%; height: 1200px;"></div>
     </section>
 
@@ -737,7 +736,7 @@
 
 <script>
     // Initialize the map
-    var map = L.map('map').setView([53.31214, -6.25954], 19);
+    var map = L.map('map').setView([53.312633, -6.259977], 19);
 
     // Add a tile layer (OpenStreetMap)
     L.tileLayer('https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=fa39f1df414d4dc1ab5bf1323d4b6d09', {
@@ -803,7 +802,7 @@ var officeIcon = L.icon({
     shadowUrl: '',
     
 
-    iconSize:     [80, 80], // size of the icon
+    iconSize:     [100, 100], // size of the icon
 });
 
 var busIcon = L.icon({
@@ -974,6 +973,22 @@ var eighteenIcon = L.icon({
     iconSize:     [70, 70], // size of the icon
 });
 
+var botanicIcon = L.icon({
+    iconUrl: 'images/botanic_gardens.png',
+    shadowUrl: '',
+    
+
+    iconSize:     [200, 200], // size of the icon
+});
+
+
+var trinityhallIcon = L.icon({
+    iconUrl: 'images/trinity_hall.png',
+    shadowUrl: '',
+    
+
+    iconSize:     [200, 200], // size of the icon
+});
 
     var descriptions1 = [
     "<h6>Sensory Stop 1: Lavender</h6>",
@@ -1016,7 +1031,7 @@ var eighteenIcon = L.icon({
       */    
                     
     var descriptions4 = [
-    "<h5>Trinity College Botanic Garden Office</h5>",
+    "<h5>Trinity Botanic Garden Office</h5>",
     "<hr class='hr'/>",
     "Palmerston Park, Dartry, Dublin 6, D06 W226, Ireland.",
         
@@ -1025,7 +1040,7 @@ var eighteenIcon = L.icon({
 
     var marker4 = L.marker([53.312489348, -6.259962103], {icon: officeIcon})
                     .addTo(map)
-                    .bindPopup(createPopup(descriptions4, 'images/trinity_botanic_logo.jpg', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                    .bindPopup(createPopup(descriptions4, 'images/main_office.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
                   
                     .on('mouseout', function(e) { e.target.closeTooltip(); });
 
@@ -1035,7 +1050,7 @@ var eighteenIcon = L.icon({
         
     ];
 
-    var marker5 = L.marker([53.311809, -6.262609], {icon: busIcon})
+    var marker5 = L.marker([53.312362, -6.260940], {icon: busIcon})
                     .addTo(map)
                     .bindPopup(createPopup(descriptions5, 'images/140_bustop.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
                   
@@ -1043,7 +1058,7 @@ var eighteenIcon = L.icon({
                     
 
 var descriptions6 = [
-    "<h5>Cowper Luas Stop - Green Line</h5>"
+    "<h5>Cowper Luas Stop</h5>"
         
     ];
 
@@ -1062,7 +1077,7 @@ var descriptions7 = [
 
     var marker7 = L.marker([53.312348329, -6.260005019], {icon: greenhouseIcon})
                     .addTo(map)
-                    .bindPopup(createPopup(descriptions7, 'images/garden_marker.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                    .bindPopup(createPopup(descriptions7, 'images/cycad_house.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
                   
                     .on('mouseout', function(e) { e.target.closeTooltip(); });
 
@@ -1086,7 +1101,7 @@ var descriptions8 = [
 
     var marker9 = L.marker([53.312465310, -6.260238371], {icon: greenhouseIcon})
                     .addTo(map)
-                    .bindPopup(createPopup(descriptions9, 'images/garden_marker.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                    .bindPopup(createPopup(descriptions9, 'images/long_house.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
              
                     .on('mouseout', function(e) { e.target.closeTooltip(); });      
                     
@@ -1098,7 +1113,7 @@ var descriptions8 = [
 
     var marker10 = L.marker([53.312186477, -6.259943328], {icon: greenhouseIcon})
                     .addTo(map)
-                    .bindPopup(createPopup(descriptions10, 'images/garden_marker.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                    .bindPopup(createPopup(descriptions10, 'images/irish_house.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
               
                     .on('mouseout', function(e) { e.target.closeTooltip(); });   
                     
@@ -1110,7 +1125,7 @@ var descriptions8 = [
 
     var marker11 = L.marker([53.312261794, -6.260037205], {icon: greenhouseIcon})
                     .addTo(map)
-                    .bindPopup(createPopup(descriptions11, 'images/garden_marker.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                    .bindPopup(createPopup(descriptions11, 'images/stove_house.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
                    
                     .on('mouseout', function(e) { e.target.closeTooltip(); });  
                     
@@ -1317,9 +1332,35 @@ var descriptions8 = [
 
     var marker28 = L.marker([53.312042251, -6.259500763], {icon: arboretumIcon})
                     .addTo(map)
-                    .bindPopup(createPopup(descriptions28, 'images/log_seat.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                    .bindPopup(createPopup(descriptions28, 'images/the_aboretum.jpeg', 'lost_and_found.mp3'), {className: 'custom-popup'})
                    
-                    .on('mouseout', function(e) { e.target.closeTooltip(); });                  
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });      
+                    
+                    
+
+    var descriptions29 = [
+    "<h5>Trinity Botanic Garden</h5>"
+        
+    ];
+
+    var marker29 = L.marker([53.312633, -6.259977], {icon: botanicIcon})
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions29, 'images/main_office.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                   
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });    
+                    
+                    
+    var descriptions30 = [
+    "<h5>Trinity Hall</h5>"
+        
+    ];
+
+    var marker30 = L.marker([53.312197, -6.261359], {icon: trinityhallIcon})
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions30, 'images/trinityhall.jpeg', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                   
+                    .on('mouseout', function(e) { e.target.closeTooltip(); });                
+	              
 	
 </script>
 
