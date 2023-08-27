@@ -1036,6 +1036,13 @@ var rockeryIcon = L.icon({
     iconSize:     [80, 80], // size of the icon
 });
 
+var catIcon = L.icon({
+    iconUrl: 'images/cat.png',
+    shadowUrl: '',
+    
+
+    iconSize:     [100, 100], // size of the icon
+});
 
 var descriptions1 = [
     "<h6>Sensory Stop 1: Lavender</h6>",
@@ -1477,6 +1484,17 @@ var descriptions8 = [
     var marker36 = L.marker([53.312453289, -6.259594647], {icon: rockeryIcon})
                     .addTo(map)
                     .bindPopup(createPopup(descriptions36, 'images/the_rockery.jpeg', 'lost_and_found.mp3'), {className: 'custom-popup'})
+                   
+                    .on('mouseout', function(e) { e.target.closeTooltip(); }); 
+
+    var descriptions37 = [
+    "<h5>Garden Cats</h5>"
+        
+    ];
+
+    var marker37 = L.marker([53.312142409, -6.259685171], {icon: catIcon})
+                    .addTo(map)
+                    .bindPopup(createPopup(descriptions37, 'images/fluffy.png', 'lost_and_found.mp3'), {className: 'custom-popup'})
                    
                     .on('mouseout', function(e) { e.target.closeTooltip(); }); 
 	
