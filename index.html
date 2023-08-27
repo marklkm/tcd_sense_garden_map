@@ -104,7 +104,7 @@
 	     </p>
 
          <h3>TCD Sense </h3>
-         <p><a href="https://www.tcd.ie/disability/services/tcdsense.php" target="_blank" rel="nonopener">TCD Sense - The Trinity Sensory Processing Project</a> - aims to make Trinity more inclusive by 
+         <p>TCD Sense - The Trinity Sensory Processing Project - aims to make Trinity more inclusive by 
             reviewing and improving new and existing spaces, building sensory awareness and delivering 
             specialist supports to students who experience barriers to managing and adapting the sensory environments of college.</p>
 
@@ -269,6 +269,10 @@
                                         plant with pale yellow flowers (meadow rue) by the entrance to the South Arboretum. and you
                                         should find it teeming with white-tailed bumble bees. Take a moment to watch the bees flit from
                                         flower to flower and listen to their gentle buzzing.</p>
+                                        <audio controls class="top-50 start-50">
+                                            <source src="Sensory-Stop-2-Bees.mp3" type="audio/mpeg">
+                                          Your browser does not support the audio element.
+                                          </audio>
                                     <img src="images/bees.png" alt="A bumble bee on a plant." class="img-fluid">
                                 </div>
                             </div>
@@ -1016,7 +1020,7 @@ var logseatIcon = L.icon({
     shadowUrl: '',
     
 
-    iconSize:     [200, 200], // size of the icon
+    iconSize:     [150, 150], // size of the icon
 });
 
 var trinitycollegeIcon = L.icon({
@@ -1421,7 +1425,7 @@ var descriptions8 = [
         
     ];
 
-    var marker31 = L.marker([53.312309869, -6.259414933], {icon: arboretumIcon})
+    var marker31 = L.marker([53.312300257, -6.259416274], {icon: arboretumIcon})
                     .addTo(map)
                     .bindPopup(createPopup(descriptions31, 'images/walled_garden.jpeg', 'lost_and_found.mp3'), {className: 'custom-popup'})
                    
@@ -1465,7 +1469,9 @@ var descriptions8 = [
                     
                     
     var descriptions35 = [
-    "<h5>Log Seats in the Gardens</h5>"
+    "<h5>Log Seats in the Gardens</h5>",
+    "<hr class='hr'/>",
+    "There are two tree stumps / log seats in Walled Garden",
         
     ];
 
@@ -1487,10 +1493,11 @@ var descriptions8 = [
                    
                     .on('mouseout', function(e) { e.target.closeTooltip(); }); 
 
+
     var descriptions37 = [
     "<h5>Garden Cats</h5>",
             "<hr class='hr'/>",
-    "Keep an eye out for the cute resident garden cats and kittens!",
+    "Keep an eye out for the cute reseident garden cats and kittens!",
         
     ];
 
