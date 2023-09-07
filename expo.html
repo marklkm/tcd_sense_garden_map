@@ -136,6 +136,26 @@
       <a class="btn btn-primary btn-lg" href="results.html" role="button">Vote</a>
   </section>
 
+
+  <div class="modal fade" id="voteModal" tabindex="-1" aria-labelledby="voteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="voteModalLabel">Vote Confirmation</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Vote registered! Thank you for voting.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="results.html" class="btn btn-primary">See Results</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
     
   </div>
 </div>
@@ -150,16 +170,17 @@
   <script>
 document.addEventListener('DOMContentLoaded', (event) => {
     const voteButtons = document.querySelectorAll('.vote-button');
+    const voteModal = new bootstrap.Modal(document.getElementById('voteModal'));
+
     voteButtons.forEach(btn => {
         btn.addEventListener('click', function() {
             let photoId = this.getAttribute('data-photo-id');
-            // Simulating sending vote to the server
             localStorage.setItem(photoId, (parseInt(localStorage.getItem(photoId) || 0) + 1).toString());
-
-            alert('Vote registered! Thank you for voting.');
+            voteModal.show(); // Show the confirmation popup
         });
     });
 });
+
 
   </script>
 
