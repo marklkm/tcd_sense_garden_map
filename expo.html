@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trinity Through Lenses: A Digital Reflection</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Your website content will go here -->
+
+    <!-- Bootstrap JS & Popper.js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+
+    font-size: 19px;
+    /*padding-top: 20px;*/
+
+    
+}
+
+.photo-section img {
+    width: 100%;
+    height: 600px; /* or whatever height you prefer */
+    object-fit: cover; /* This will ensure the images cover the entire space without distortion */
+    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+}
+
+.zoom:hover {
+    transform: scale(0.9); /* Zoom out effect on hover */
+}
+
+
+
+    </style>
+
+
+  
+    <!-- Navbar with Logo -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container">
+          <a class="navbar-brand" href="#">
+              <img src="images/trinity_botanic_logo.jpg" alt="Logo for Trinity College Botanic Garden" width="30" height="30" class="d-inline-block align-text-top">
+              Trinity Through Lenses: A Digital Reflection
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#campusPhotos">Trinity Campus</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#gardenPhotos">Trinity Botanic Garden</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#studentPhotos">Student Photos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="results.html">Results</a>
+              </li>
+            </ul>
+          </div>
+      </div>
+  </nav>
+
+
+  <div class="container mt-5 photo-section" id="campusPhotos">
+  <h2>Trinity Campus Photos | <a class="btn btn-primary btn-lg" href="results.html" role="button">View Voting Page</a></h2>
+  <div class="row">
+    
+    <!-- Example photo card -->
+    <div class="col-md-4">
+      <div class="card">
+        <img src="images/Reflection.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Reflection</h5>
+          <p>A reflection of the Campanile.</p>
+          <p class="card-text">Photographer: Cristina</p>
+          <button class="btn btn-primary vote-button" data-photo-id="1">Vote</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Repeat for other photos -->
+    
+        <!-- Example photo card -->
+    <div class="col-md-4">
+      <div class="card">
+        <img src="images/freshers.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Freshers</h5>
+          <p>During Fresher's week in Trinity front square.</p>
+          <p class="card-text">Photographer: Cristina</p>
+          <button class="btn btn-primary vote-button" data-photo-id="2">Vote</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Repeat for other photos -->
+    
+        <!-- Example photo card -->
+    <div class="col-md-4">
+      <div class="card">
+        <img src="images/Bikes.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Bikes</h5>
+          <p>Bikes on the Trinity campus.</p>
+          <p class="card-text">Photographer: Cristina</p>
+          <button class="btn btn-primary vote-button" data-photo-id="3">Vote</button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Repeat for other photos -->
+
+
+    <section class="container mt-5 mb-5">
+      <!-- Heading -->
+      <h1 class="mb-3">View Photo Results</h1>
+      
+      <!-- Paragraph -->
+      <p class="mb-3">
+          View voted photo results.
+      </p>
+      
+      <!-- Button -->
+      <a class="btn btn-primary btn-lg" href="results.html" role="button">Vote</a>
+  </section>
+
+    
+  </div>
+</div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center text-secondary py-3">
+      <div class="container">
+          <p>&copy; 2023 Trinity Through Lenses: A Digital Reflection</p>
+      </div>
+  </footer>
+
+  <script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const voteButtons = document.querySelectorAll('.vote-button');
+    voteButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            let photoId = this.getAttribute('data-photo-id');
+            // Simulating sending vote to the server
+            localStorage.setItem(photoId, (parseInt(localStorage.getItem(photoId) || 0) + 1).toString());
+
+            alert('Vote registered! Thank you for voting.');
+        });
+    });
+});
+
+  </script>
+
+</body>
+</html>
