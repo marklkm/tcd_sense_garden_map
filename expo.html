@@ -1,15 +1,17 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trinity Through Lenses: A Digital Reflection</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
     <!-- Your website content will go here -->
 
     <!-- Bootstrap JS & Popper.js-->
@@ -17,496 +19,647 @@
     <script src="scripts.js"></script>
 
     <style>
-        body {
-    font-family: 'Arial', sans-serif;
+      body {
+        font-family: "Arial", sans-serif;
 
-    font-size: 19px;
-    /*padding-top: 20px;*/
+        font-size: 19px;
+        /*padding-top: 20px;*/
 
-    .card {
-    margin-bottom: 15px;
-    margin-top: 15px;
-  }
-}
+        .card {
+          margin-bottom: 15px;
+          margin-top: 15px;
+        }
+      }
 
-.photo-section img {
-    width: 100%;
-    height: 600px; /* or whatever height you prefer */
-    object-fit: cover; /* This will ensure the images cover the entire space without distortion */
-    transition: transform 0.3s ease; /* Smooth transition for zoom effect */
-}
+      .photo-section img {
+        width: 100%;
+        height: 600px; /* or whatever height you prefer */
+        object-fit: cover; /* This will ensure the images cover the entire space without distortion */
+        transition: transform 0.3s ease; /* Smooth transition for zoom effect */
+      }
 
-.zoom:hover {
-    transform: scale(0.9); /* Zoom out effect on hover */
-}
-
-
-
+      .zoom:hover {
+        transform: scale(0.9); /* Zoom out effect on hover */
+      }
     </style>
 
-
-  
     <!-- Navbar with Logo -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
       <div class="container">
-          <a class="navbar-brand" href="#">
-              <img src="images/trinity_botanic_logo.jpg" alt="Logo for Trinity College Botanic Garden" width="30" height="30" class="d-inline-block align-text-top">
-              Trinity Through Lenses: A Digital Reflection
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#campusPhotos">Trinity Campus</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#gardenPhotos">Trinity Botanic Garden</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#studentPhotos">Student Photos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="results.html">Results</a>
-              </li>
-            </ul>
-          </div>
-      </div>
-  </nav>
-
-
-  <div class="container mt-5 photo-section" id="campusPhotos">
-
-
-
-  <h2>Trinity Campus Photos | <a class="btn btn-primary btn-lg" href="results.html" role="button">View Voting Page</a></h2>
-  <div class="row">
-    
-    <!-- Example photo card -->
-    <div class="col-md-4">
-      <div class="card mb-3">
-        <img src="images/Reflection.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Reflection</h5>
-          <p>A reflection of the Campanile.</p>
-          <p class="card-text">Photographer: Cristina</p>
-          <button class="btn btn-primary vote-button" data-photo-id="1">Vote</button>
+        <a class="navbar-brand" href="#">
+          <img
+            src="images/trinity_botanic_logo.jpg"
+            alt="Logo for Trinity College Botanic Garden"
+            width="30"
+            height="30"
+            class="d-inline-block align-text-top"
+          />
+          Trinity Through Lenses: A Digital Reflection
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="#campusPhotos">Trinity Campus</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gardenPhotos"
+                >Trinity Botanic Garden</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#studentPhotos">Student Photos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="results.html">Results</a>
+            </li>
+          </ul>
         </div>
       </div>
-    </div>
-    
-    <!-- Repeat for other photos -->
-    
+    </nav>
+
+    <div class="container mt-5 photo-section" id="campusPhotos">
+      <h2>
+        Trinity Campus Photos |
+        <a class="btn btn-primary btn-lg" href="results.html" role="button"
+          >View Voting Page</a
+        >
+      </h2>
+      <div class="row">
         <!-- Example photo card -->
-    <div class="col-md-4">
-      <div class="card">
-        <img src="images/freshers.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Freshers Week</h5>
-          <p>During Fresher's week in Trinity front square.</p>
-          <p class="card-text">Photographer: Cristina</p>
-          <button class="btn btn-primary vote-button" data-photo-id="2">Vote</button>
+        <div class="col-md-4">
+          <div class="card mb-3">
+            <img src="images/Reflection.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Reflection</h5>
+              <p>A reflection of the Campanile.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="1">
+                Vote
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    
-    <!-- Repeat for other photos -->
-    
+
+        <!-- Repeat for other photos -->
+
         <!-- Example photo card -->
-    <div class="col-md-4">
-      <div class="card">
-        <img src="images/Bikes.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Bikes</h5>
-          <p>Bikes on Trinity campus.</p>
-          <p class="card-text">Photographer: Cristina</p>
-          <button class="btn btn-primary vote-button" data-photo-id="3">Vote</button>
+        <div class="col-md-4">
+          <div class="card">
+            <img src="images/freshers.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Freshers Week</h5>
+              <p>During Fresher's week in Trinity front square.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="2">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="images/Bikes.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Bikes</h5>
+              <p>Bikes on Trinity campus.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="3">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="images/Autumn Campanile.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Autumn Campanile</h5>
+              <p>Autumn Campanile on Trinity campus.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="4">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="images/Old Library.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Old Library</h5>
+              <p>Old Library.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="5">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="images/Walking man.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Walking Man</h5>
+              <p>Walking Man on Trinity campus.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="6">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="images/Bloom.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Bloom</h5>
+              <p>Cherry BLossom on Trinity campus.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="7">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="images/Botany Bay.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Botany Bay</h5>
+              <p>Botany Bay on Trinity campus.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="8">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="images/Chapel.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Chapel</h5>
+              <p>Inside the Chapel on Trinity campus.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="9">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="images/Christmas.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Christmas</h5>
+              <p>Christmas at Trinity campus.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="10">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="images/Dusk.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Dusk</h5>
+              <p>Dusk at Trinity campus.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="11">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="images/Irises.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Irises</h5>
+              <p>Irises on Trinity campus.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="12">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="images/Library detail.2.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Library</h5>
+              <p>Library.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="13">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="images/Magnolia.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Magnolia</h5>
+              <p>Magnolia on Trinity campus.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="14">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="images/Morning January.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">January Morning</h5>
+              <p>January Morning on Trinity campus.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="15">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="images/Natural Sciences.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Natural Sciences</h5>
+              <p>Natural Sciences.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="16">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="images/Old Library detail.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Old Library</h5>
+              <p>Old Library Detail.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="17">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="images/Old Library statue.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Old Library Statue</h5>
+              <p>Old Library Statue.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="18">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="images/Provost's house garden.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Provost's Garden</h5>
+              <p>Provost House Garden.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="19">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="images/Reflection.2.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Relfection</h5>
+              <p>Reflection.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="20">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="images/Rubrics.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Rubrics</h5>
+              <p>Rubrics Building.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="21">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="images/Trinity Business School.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Trinity Business School</h5>
+              <p>Trinity Business School.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="22">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="images/Spring Campanile sunset.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Spring Campanile</h5>
+              <p>Spring Campanile.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="23">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <!-- Example photo card -->
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="images/Trinity wedding.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title">Trinity Wedding</h5>
+              <p>Trinity Wedding.</p>
+              <p class="card-text">Photographer: Cristina</p>
+              <button class="btn btn-primary vote-button" data-photo-id="24">
+                Vote
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat for other photos -->
+
+        <section class="container mt-5 mb-5">
+          <!-- Heading -->
+          <h1 class="mb-3">Trinity Development &amp; Alumni</h1>
+
+          <!-- Paragraph -->
+          <p class="mb-3">Emergency Appeal for The Student Hardship Fund.</p>
+
+          <!-- Button -->
+          <!-- <a class="btn btn-primary btn-lg" href="results.html" role="button">Vote</a> -->
+        </section>
+
+        <div
+          class="modal fade"
+          id="voteModal"
+          tabindex="-1"
+          aria-labelledby="voteModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="voteModalLabel">
+                  Vote Confirmation
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                Vote registered! Thank you for voting.
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <a href="results.html" class="btn btn-primary">See Results</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
+      <button
+        id="backToTop"
+        class="btn btn-primary position-fixed bottom-0 end-0 m-3"
+        style="z-index: 9999; display: none"
+        onclick="scrollToTop()"
+      >
+        ↑ TOP
+      </button>
     </div>
-    
-    <!-- Repeat for other photos -->
-
-           <!-- Example photo card -->
-           <div class="col-md-4">
-            <div class="card">
-              <img src="images/Autumn Campanile.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Autumn Campanile</h5>
-                <p>Autumn Campanile on Trinity campus.</p>
-                <p class="card-text">Photographer: Cristina</p>
-                <button class="btn btn-primary vote-button" data-photo-id="4">Vote</button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Repeat for other photos -->
-
-                 <!-- Example photo card -->
-    <div class="col-md-4">
-      <div class="card">
-        <img src="images/Old Library.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Old Library</h5>
-          <p>Old Library.</p>
-          <p class="card-text">Photographer: Cristina</p>
-          <button class="btn btn-primary vote-button" data-photo-id="5">Vote</button>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Repeat for other photos -->
-
-           <!-- Example photo card -->
-           <div class="col-md-4">
-            <div class="card">
-              <img src="images/Walking man.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Walking Man</h5>
-                <p>Walking Man on Trinity campus.</p>
-                <p class="card-text">Photographer: Cristina</p>
-                <button class="btn btn-primary vote-button" data-photo-id="6">Vote</button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Repeat for other photos -->
-
-
-
-    <!-- Repeat for other photos -->
-
-           <!-- Example photo card -->
-           <div class="col-md-4">
-            <div class="card">
-              <img src="images/Bloom.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Bloom</h5>
-                <p>Cherry BLossom on Trinity campus.</p>
-                <p class="card-text">Photographer: Cristina</p>
-                <button class="btn btn-primary vote-button" data-photo-id="7">Vote</button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Repeat for other photos -->
-
-              <!-- Repeat for other photos -->
-
-           <!-- Example photo card -->
-           <div class="col-md-4">
-            <div class="card">
-              <img src="images/Botany Bay.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Botany Bay</h5>
-                <p>Botany Bay on Trinity campus.</p>
-                <p class="card-text">Photographer: Cristina</p>
-                <button class="btn btn-primary vote-button" data-photo-id="8">Vote</button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Repeat for other photos -->
-
-              <!-- Repeat for other photos -->
-
-           <!-- Example photo card -->
-           <div class="col-md-4">
-            <div class="card">
-              <img src="images/Chapel.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Chapel</h5>
-                <p>Inside the Chapel on Trinity campus.</p>
-                <p class="card-text">Photographer: Cristina</p>
-                <button class="btn btn-primary vote-button" data-photo-id="9">Vote</button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Repeat for other photos -->
-
-              <!-- Repeat for other photos -->
-
-           <!-- Example photo card -->
-           <div class="col-md-4">
-            <div class="card">
-              <img src="images/Christmas.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Christmas</h5>
-                <p>Christmas at Trinity campus.</p>
-                <p class="card-text">Photographer: Cristina</p>
-                <button class="btn btn-primary vote-button" data-photo-id="10">Vote</button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Repeat for other photos -->
-
-              <!-- Repeat for other photos -->
-
-           <!-- Example photo card -->
-           <div class="col-md-4">
-            <div class="card">
-              <img src="images/Dusk.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Dusk</h5>
-                <p>Dusk at Trinity campus.</p>
-                <p class="card-text">Photographer: Cristina</p>
-                <button class="btn btn-primary vote-button" data-photo-id="11">Vote</button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Repeat for other photos -->
-
-              <!-- Repeat for other photos -->
-
-           <!-- Example photo card -->
-           <div class="col-md-4">
-            <div class="card">
-              <img src="images/Irises.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Irises</h5>
-                <p>Irises on Trinity campus.</p>
-                <p class="card-text">Photographer: Cristina</p>
-                <button class="btn btn-primary vote-button" data-photo-id="12">Vote</button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Repeat for other photos -->
-
-              <!-- Repeat for other photos -->
-
-           <!-- Example photo card -->
-           <div class="col-md-4">
-            <div class="card">
-              <img src="images/Library detail.2.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Library</h5>
-                <p>Library.</p>
-                <p class="card-text">Photographer: Cristina</p>
-                <button class="btn btn-primary vote-button" data-photo-id="13">Vote</button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Repeat for other photos -->
-
-              <!-- Repeat for other photos -->
-
-           <!-- Example photo card -->
-           <div class="col-md-4">
-            <div class="card">
-              <img src="images/Magnolia.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Magnolia</h5>
-                <p>Magnolia on Trinity campus.</p>
-                <p class="card-text">Photographer: Cristina</p>
-                <button class="btn btn-primary vote-button" data-photo-id="14">Vote</button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Repeat for other photos -->
-
-              <!-- Repeat for other photos -->
-
-           <!-- Example photo card -->
-           <div class="col-md-4">
-            <div class="card">
-              <img src="images/Morning January.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">January Morning</h5>
-                <p>January Morning on Trinity campus.</p>
-                <p class="card-text">Photographer: Cristina</p>
-                <button class="btn btn-primary vote-button" data-photo-id="15">Vote</button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Repeat for other photos -->
-
-              <!-- Repeat for other photos -->
-
-           <!-- Example photo card -->
-           <div class="col-md-4">
-            <div class="card">
-              <img src="images/Natural Sciences.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Natural Sciences</h5>
-                <p>Natural Sciences.</p>
-                <p class="card-text">Photographer: Cristina</p>
-                <button class="btn btn-primary vote-button" data-photo-id="16">Vote</button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Repeat for other photos -->
-
-              <!-- Repeat for other photos -->
-
-           <!-- Example photo card -->
-           <div class="col-md-4">
-            <div class="card">
-              <img src="images/Old Library detail.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Old Library</h5>
-                <p>Old Library Detail.</p>
-                <p class="card-text">Photographer: Cristina</p>
-                <button class="btn btn-primary vote-button" data-photo-id="17">Vote</button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Repeat for other photos -->
-
-              <!-- Repeat for other photos -->
-
-           <!-- Example photo card -->
-           <div class="col-md-4">
-            <div class="card">
-              <img src="images/Old Library statue.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Old Library Statue</h5>
-                <p>Old Library Statue.</p>
-                <p class="card-text">Photographer: Cristina</p>
-                <button class="btn btn-primary vote-button" data-photo-id="18">Vote</button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Repeat for other photos -->
-
-                     <!-- Example photo card -->
-                     <div class="col-md-4">
-                      <div class="card">
-                        <img src="images/Provost's house garden.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">Provost's Garden</h5>
-                          <p>Provost House Garden.</p>
-                          <p class="card-text">Photographer: Cristina</p>
-                          <button class="btn btn-primary vote-button" data-photo-id="19">Vote</button>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <!-- Repeat for other photos -->
-
-                               <!-- Example photo card -->
-           <div class="col-md-4">
-            <div class="card">
-              <img src="images/Reflection.2.jpg" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Relfection</h5>
-                <p>Reflection.</p>
-                <p class="card-text">Photographer: Cristina</p>
-                <button class="btn btn-primary vote-button" data-photo-id="20">Vote</button>
-              </div>
-            </div>
-          </div>
-          
-          <!-- Repeat for other photos -->
-
-                                         <!-- Example photo card -->
-                                         <div class="col-md-4">
-                                          <div class="card">
-                                            <img src="images/Rubrics.jpg" class="card-img-top" alt="...">
-                                            <div class="card-body">
-                                              <h5 class="card-title">Rubrics</h5>
-                                              <p>Rubrics Building.</p>
-                                              <p class="card-text">Photographer: Cristina</p>
-                                              <button class="btn btn-primary vote-button" data-photo-id="21">Vote</button>
-                                            </div>
-                                          </div>
-                                        </div>
-                                        
-                                        <!-- Repeat for other photos -->
-
-          
-
-
-
-
-    <section class="container mt-5 mb-5">
-      <!-- Heading -->
-      <h1 class="mb-3">Trinity Development &amp; Alumni</h1>
-      
-      <!-- Paragraph -->
-      <p class="mb-3">
-        Emergency Appeal for The Student Hardship Fund.
-      </p>
-      
-      <!-- Button -->
-      <!-- <a class="btn btn-primary btn-lg" href="results.html" role="button">Vote</a> -->
-  </section>
-
-
-
-
-  <div class="modal fade" id="voteModal" tabindex="-1" aria-labelledby="voteModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="voteModalLabel">Vote Confirmation</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          Vote registered! Thank you for voting.
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <a href="results.html" class="btn btn-primary">See Results</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-
-    
-  </div>
-
-  <button id="backToTop" class="btn btn-primary position-fixed bottom-0 end-0 m-3" style="z-index: 9999; display: none;" onclick="scrollToTop()">↑ TOP</button>
-
-</div>
 
     <!-- Footer -->
     <footer class="bg-light text-center text-secondary py-3">
       <div class="container">
-          <p>&copy; 2023 Trinity Through Lenses: A Digital Reflection</p>
+        <p>&copy; 2023 Trinity Through Lenses: A Digital Reflection</p>
       </div>
-  </footer>
+    </footer>
 
-  <script>
-document.addEventListener('DOMContentLoaded', (event) => {
-    const voteButtons = document.querySelectorAll('.vote-button');
-    const voteModal = new bootstrap.Modal(document.getElementById('voteModal'));
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const voteButtons = document.querySelectorAll(".vote-button");
+        const voteModal = new bootstrap.Modal(
+          document.getElementById("voteModal")
+        );
 
-    voteButtons.forEach(btn => {
-        btn.addEventListener('click', function() {
-            let photoId = this.getAttribute('data-photo-id');
-            localStorage.setItem(photoId, (parseInt(localStorage.getItem(photoId) || 0) + 1).toString());
+        voteButtons.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            let photoId = this.getAttribute("data-photo-id");
+            localStorage.setItem(
+              photoId,
+              (parseInt(localStorage.getItem(photoId) || 0) + 1).toString()
+            );
             voteModal.show(); // Show the confirmation popup
+          });
         });
-    });
-});
+      });
 
-function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-  }
-  
-  window.addEventListener('scroll', function() {
-      const backToTopButton = document.getElementById('backToTop');
-      if (window.pageYOffset > 300) { // Show the button after 300px of scrolling
-          backToTopButton.style.display = 'block';
-      } else {
-          backToTopButton.style.display = 'none';
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
-  });
-  </script>
 
-
-
-</body>
+      window.addEventListener("scroll", function () {
+        const backToTopButton = document.getElementById("backToTop");
+        if (window.pageYOffset > 300) {
+          // Show the button after 300px of scrolling
+          backToTopButton.style.display = "block";
+        } else {
+          backToTopButton.style.display = "none";
+        }
+      });
+    </script>
+  </body>
 </html>
