@@ -343,6 +343,9 @@
 </div>
 
 
+<button id="backToTop" class="btn btn-primary position-fixed bottom-0 end-0 m-3" style="z-index: 9999; display: none;" onclick="scrollToTop()">↑ TOP</button>
+
+
     <!-- Footer -->
     <footer class="bg-light text-center text-secondary py-3 mt-5  ">
       <div class="container">
@@ -358,23 +361,36 @@
   document.getElementById('votesForPhoto4').innerText = localStorage.getItem('4') || '0';
   document.getElementById('votesForPhoto5').innerText = localStorage.getItem('5') || '0';
   document.getElementById('votesForPhoto6').innerText = localStorage.getItem('6') || '0';
-  document.getElementById('votesForPhoto6').innerText = localStorage.getItem('7') || '0';
-  document.getElementById('votesForPhoto6').innerText = localStorage.getItem('8') || '0';
-  document.getElementById('votesForPhoto6').innerText = localStorage.getItem('9') || '0';
-  document.getElementById('votesForPhoto6').innerText = localStorage.getItem('10') || '0';
-  document.getElementById('votesForPhoto6').innerText = localStorage.getItem('11') || '0';
-  document.getElementById('votesForPhoto6').innerText = localStorage.getItem('12') || '0';
-  document.getElementById('votesForPhoto6').innerText = localStorage.getItem('13') || '0';
-  document.getElementById('votesForPhoto6').innerText = localStorage.getItem('14') || '0';
-  document.getElementById('votesForPhoto6').innerText = localStorage.getItem('15') || '0';
-  document.getElementById('votesForPhoto6').innerText = localStorage.getItem('16') || '0';
-  document.getElementById('votesForPhoto6').innerText = localStorage.getItem('17') || '0';
-  document.getElementById('votesForPhoto6').innerText = localStorage.getItem('18') || '0';
-  document.getElementById('votesForPhoto6').innerText = localStorage.getItem('19') || '0';
-  document.getElementById('votesForPhoto6').innerText = localStorage.getItem('20') || '0';
-  document.getElementById('votesForPhoto6').innerText = localStorage.getItem('21') || '0';
+  document.getElementById('votesForPhoto7').innerText = localStorage.getItem('7') || '0';
+  document.getElementById('votesForPhoto8').innerText = localStorage.getItem('8') || '0';
+  document.getElementById('votesForPhoto9').innerText = localStorage.getItem('9') || '0';
+  document.getElementById('votesForPhoto10').innerText = localStorage.getItem('10') || '0';
+  document.getElementById('votesForPhoto11').innerText = localStorage.getItem('11') || '0';
+  document.getElementById('votesForPhoto12').innerText = localStorage.getItem('12') || '0';
+  document.getElementById('votesForPhoto13').innerText = localStorage.getItem('13') || '0';
+  document.getElementById('votesForPhoto14').innerText = localStorage.getItem('14') || '0';
+  document.getElementById('votesForPhoto15').innerText = localStorage.getItem('15') || '0';
+  document.getElementById('votesForPhoto16').innerText = localStorage.getItem('16') || '0';
+  document.getElementById('votesForPhoto17').innerText = localStorage.getItem('17') || '0';
+  document.getElementById('votesForPhoto18').innerText = localStorage.getItem('18') || '0';
+  document.getElementById('votesForPhoto19').innerText = localStorage.getItem('19') || '0';
+  document.getElementById('votesForPhoto20').innerText = localStorage.getItem('20') || '0';
+  document.getElementById('votesForPhoto21').innerText = localStorage.getItem('21') || '0';
   
   // Repeat for other photos
+
+  function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  window.addEventListener('scroll', function() {
+      const backToTopButton = document.getElementById('backToTop');
+      if (window.pageYOffset > 300) { // Show the button after 300px of scrolling
+          backToTopButton.style.display = 'block';
+      } else {
+          backToTopButton.style.display = 'none';
+      }
+  });
 </script>
 
 </body>
