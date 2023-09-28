@@ -74,6 +74,27 @@
         object-fit: cover; /* This will ensure the images cover the entire space without distortion */
       }
 
+      .frame {
+    width: 800px;
+    padding: 15px; /* Adjust the width of the frame */
+    background-color: #000; /* Black frame */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Optional: Add shadow to the frame */
+    display: inline-block;
+    border-radius: 0px; /* Optional: Round the corners of the frame */
+}
+
+.matting {
+    padding: 10px; /* Adjust the width of the matting */
+    background-color: #fff; /* White matting */
+}
+
+.frame img {
+    display: block;
+    width: 100%; /* Make the image fill the matting */
+    height: auto;
+}
+
+
       /*#map1 { position: absolute; top: -0; bottom: -0; width: 100%; }*/
     </style>
 
@@ -238,6 +259,13 @@
           collection of approximately 4,000 species, and also houses the Irish
           Threatened Plant Seed Bank.
         </p>
+
+        <div class="frame mb-3 mt-3 mx-auto text-center img-fluid">
+          <div class="matting">
+              <img src="images/autumn_leaves.jpeg" alt="Fallen Autumn Leaves on a fallen tree.">
+          </div>
+      </div>
+      
 
         <p>
           The majority of the gardens are outside with the only indoor areas
@@ -1396,7 +1424,7 @@
           <div class="col-md-4 mb-3">
             <h5 class="text-center">Sensory Stop 10 - Witch Hazel</h5>
             <img
-              src="images/witch_hazel.png"
+              src="images/witchhazel.jpeg"
               alt="Sensory Stop 10 is some colourful With Hazel."
               class="img-fluid stops"
               data-bs-toggle="modal"
@@ -1454,7 +1482,7 @@
                       foraged yourself.
                     </p>
                     <img
-                      src="images/witch_hazel.png"
+                      src="images/witchhazel.jpeg"
                       alt="Sensory Stop 10 is some colourful With Hazel."
                       class="img-fluid"
                       loading="lazy"
@@ -2756,7 +2784,7 @@
         .bindPopup(
           createPopup(
             descriptions19,
-            "images/witch_hazel.png",
+            "images/witchhazel.jpeg",
             "audio/Sensory-Stop-10-Witch-Hazel.mp3"
           ),
           { className: "custom-popup" }
