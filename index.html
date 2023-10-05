@@ -25,24 +25,31 @@
       rel="stylesheet"
     />
     <script src="lazysizes.min.js" async=""></script>
+    <script src="https://cdn.jsdelivr.net/ally.js/1.4.1/ally.min.js"></script>
+<script>
+  console.log('loaded ally.js in version', ally.version);
+  console.log('focusable elements', ally.query.focusable());
+</script>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/a11y.js@2.2.1"></script>
-
 
     <style>
       .custom-popup .leaflet-popup-content {
         width: auto !important; /* Adjust width as needed */
       }
 
-      .navbar, ul, li, .nav-item {
+      .navbar,
+      ul,
+      li,
+      .nav-item {
         font-size: large;
         color: black !important;
         font-weight: bold;
       }
 
       .navbar {
-        padding-top: .1rem;
-        padding-bottom: .1rem;
+        padding-top: 0.1rem;
+        padding-bottom: 0.1rem;
       }
 
       .navbar-light .navbar-nav .nav-link {
@@ -80,25 +87,24 @@
       }
 
       .frame {
-    width: 800px;
-    padding: 15px; /* Adjust the width of the frame */
-    background-color: #000; /* Black frame */
-    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Optional: Add shadow to the frame */
-    display: inline-block;
-    border-radius: 0px; /* Optional: Round the corners of the frame */
-}
+        width: 800px;
+        padding: 15px; /* Adjust the width of the frame */
+        background-color: #000; /* Black frame */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: Add shadow to the frame */
+        display: inline-block;
+        border-radius: 0px; /* Optional: Round the corners of the frame */
+      }
 
-.matting {
-    padding: 10px; /* Adjust the width of the matting */
-    background-color: #fff; /* White matting */
-}
+      .matting {
+        padding: 10px; /* Adjust the width of the matting */
+        background-color: #fff; /* White matting */
+      }
 
-.frame img {
-    display: block;
-    width: 100%; /* Make the image fill the matting */
-    height: auto;
-}
-
+      .frame img {
+        display: block;
+        width: 100%; /* Make the image fill the matting */
+        height: auto;
+      }
 
       /*#map1 { position: absolute; top: -0; bottom: -0; width: 100%; }*/
     </style>
@@ -154,9 +160,12 @@
     </nav>
 
     <!-- Pages Container -->
+ 
     <div class="container mt-5 mb-4">
       <!-- About Page -->
       <section id="about">
+
+
         <h1>Sensory Trail of the Trinity College Botanic Garden</h1>
 
         <!-- Silder -->
@@ -265,7 +274,6 @@
           Threatened Plant Seed Bank.
         </p>
 
-
         <p>
           The majority of the gardens are outside with the only indoor areas
           being the glasshouses, so it is advisable to wear something warm or
@@ -279,8 +287,6 @@
           glasshouses easily accessible to everyone.
         </p>
       </section>
-
-   
 
       <!-- Sensory Trail Page -->
       <section class="mt-4" id="sensorytrail">
@@ -331,7 +337,6 @@
           James' Hospital campus.
         </p>
 
-
         <h2>
           General Information for the Trinity College Botanic Garden Sensory
           Trail
@@ -349,7 +354,7 @@
                 aria-expanded="true"
                 aria-controls="panelsStayOpen-collapseOne"
               >
-              <h3>Summer Internship Programme</h3>
+                <h3>Summer Internship Programme</h3>
               </button>
             </h2>
             <div
@@ -357,16 +362,16 @@
               class="accordion-collapse collapse show"
             >
               <div class="accordion-body">
-
                 <p>
-                  In a collaboration between Trinity College Botanic Garden and Trinity
-                  Disability Service, a unique opportunity was offered to an
-                  undergraduate student to spend six weeks working at Trinitys College
-                  Botanic Garden to produce a sensory map of the gardens as part of TCD
-                  Sense - The Trinity Sensory Processing Project. Interns were
-                  encouraged to seek all opportunities to observe and learn and to be
-                  responsible for all areas of work assigned. You can read all about the
-                  2023 Summer Interns experience at
+                  In a collaboration between Trinity College Botanic Garden and
+                  Trinity Disability Service, a unique opportunity was offered
+                  to an undergraduate student to spend six weeks working at
+                  Trinitys College Botanic Garden to produce a sensory map of
+                  the gardens as part of TCD Sense - The Trinity Sensory
+                  Processing Project. Interns were encouraged to seek all
+                  opportunities to observe and learn and to be responsible for
+                  all areas of work assigned. You can read all about the 2023
+                  Summer Interns experience at
                   <a
                     href="https://trinitybotanicgarden.ie/2023/08/11/meet-our-smiling-2023-interns/"
                     target="_blank"
@@ -600,7 +605,7 @@
                 aria-expanded="false"
                 aria-controls="panelsStayOpen-collapseSeven"
               >
-              Trinity College Botanic Garden Highlights
+                Trinity College Botanic Garden Highlights
               </button>
             </h2>
             <div
@@ -3204,6 +3209,19 @@ map1.addControl(new mapboxgl.NavigationControl());
         });
       });
     </script>
-    
+
+    <script>
+      const contrastButton = document.getElementById("toggle-contrast");
+      const fontSizeButton = document.getElementById("toggle-font-size");
+      const bodyElement = document.body;
+
+      contrastButton.addEventListener("click", () => {
+        bodyElement.classList.toggle("high-contrast");
+      });
+
+      fontSizeButton.addEventListener("click", () => {
+        bodyElement.classList.toggle("large-font");
+      });
+    </script>
   </body>
 </html>
