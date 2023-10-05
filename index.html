@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sensory Trail</title>
+    <title>Trinity Sensory Trail</title>
     <link
       rel="shortcut icon"
       href="images/trinity_botanic_logo.jpg"
@@ -26,6 +26,8 @@
     />
     <script src="lazysizes.min.js" async=""></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/a11y.js@2.2.1"></script>
+
 
     <style>
       .custom-popup .leaflet-popup-content {
@@ -3193,5 +3195,15 @@ map1.addControl(new mapboxgl.NavigationControl());
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Initialize a11y.js after the page has loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        a11y.setup({
+          // Configuration options
+        });
+      });
+    </script>
+    
   </body>
 </html>
