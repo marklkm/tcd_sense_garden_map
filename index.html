@@ -26,10 +26,10 @@
     />
     <script src="lazysizes.min.js" async=""></script>
     <script src="https://cdn.jsdelivr.net/ally.js/1.4.1/ally.min.js"></script>
-<script>
-  console.log('loaded ally.js in version', ally.version);
-  console.log('focusable elements', ally.query.focusable());
-</script>
+    <script>
+      console.log("loaded ally.js in version", ally.version);
+      console.log("focusable elements", ally.query.focusable());
+    </script>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/a11y.js@2.2.1"></script>
 
@@ -160,12 +160,10 @@
     </nav>
 
     <!-- Pages Container -->
- 
+
     <div class="container mt-5 mb-4">
       <!-- About Page -->
       <section id="about">
-
-
         <h1>Sensory Trail of the Trinity College Botanic Garden</h1>
 
         <!-- Silder -->
@@ -2281,6 +2279,13 @@
         iconSize: [80, 80], // size of the icon
       });
 
+      var phsIcon = L.icon({
+        iconUrl: "images/phsicon.png",
+        shadowUrl: "",
+
+        iconSize: [150, 150], // size of the icon
+      });
+
       var oneIcon = L.icon({
         iconUrl: "images/one.png",
         shadowUrl: "",
@@ -2496,6 +2501,23 @@
                     .on('mouseout', function(e) { e.target.closeTooltip(); });
 
       */
+
+      var phs = [
+        "<h5>Trinity disAbility Hub</h5>",
+        "<hr class='hr'/>",
+        "Located at Trinity College Dublin, the Trinity disAbility Hub is home to the disAbility Service in Printing House Square. The Trinity disAbility Hub embodies the university's forward-thinking approach to disability, inclusivity, and sustainability.",
+      ];
+
+      var markerphs = L.marker([53.31262, -6.25893], { icon: phsIcon })
+        .addTo(map)
+        .bindPopup(
+          createPopup(phs, "images/newphs.jpg", "audio/phs_audio.mp3"),
+          { className: "custom-popup" }
+        )
+
+        .on("mouseout", function (e) {
+          e.target.closeTooltip();
+        });
 
       var descriptions4 = [
         "<h5>Trinity Botanic Garden Office</h5>",
